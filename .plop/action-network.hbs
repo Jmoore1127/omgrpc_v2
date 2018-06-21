@@ -1,15 +1,9 @@
 import { createAction, handleActions } from 'redux-actions';
 import { all, call, put, takeEvery } from 'redux-saga/effects';
 
-export type {{pascalCase name}}Payload = {
-
-};
-
-export type {{pascalCase name}}ResultPayload = any;
-
-export const {{camelCase name}} = createAction<{{pascalCase name}}Payload>('{{constantCase name}}');
-export const {{camelCase name}}Success = createAction<{{pascalCase name}}ResultPayload>('{{constantCase name}}_SUCCESS');
-export const {{camelCase name}}Failure = createAction<Error>('{{constantCase name}}_FAILURE');
+export const {{camelCase name}} = createAction('{{constantCase name}}');
+export const {{camelCase name}}Success = createAction('{{constantCase name}}_SUCCESS');
+export const {{camelCase name}}Failure = createAction('{{constantCase name}}_FAILURE');
 
 export const handle{{pascalCase name}} = function* (action) {
       try {

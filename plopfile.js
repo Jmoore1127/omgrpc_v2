@@ -23,7 +23,7 @@ module.exports = function (plop) {
     actions: [
       {
         type: 'add',
-        path: '{{cwd}}/{{kebabCase name}}/{{kebabCase name}}.component.tsx',
+        path: '{{cwd}}/{{kebabCase name}}/{{kebabCase name}}.component.jsx',
         templateFile: '.plop/component.hbs',
       },
       {
@@ -48,7 +48,7 @@ module.exports = function (plop) {
     actions: [
       {
         type: 'add',
-        path: '{{cwd}}/{{kebabCase name}}/{{kebabCase name}}.component.tsx',
+        path: '{{cwd}}/{{kebabCase name}}/{{kebabCase name}}.component.jsx',
         templateFile: '.plop/component-stateful.hbs',
       },
       {
@@ -73,7 +73,7 @@ module.exports = function (plop) {
       }],
     actions: [{
       type: 'add',
-      path: '{{cwd}}/{{kebabCase name}}.container.ts',
+      path: '{{cwd}}/{{kebabCase name}}.container.js',
       templateFile: '.plop/container.hbs',
     },
       {
@@ -97,7 +97,7 @@ module.exports = function (plop) {
       }],
     actions: [{
       type: 'add',
-      path: '{{cwd}}/{{kebabCase name}}-container/{{kebabCase name}}/{{kebabCase name}}.component.tsx',
+      path: '{{cwd}}/{{kebabCase name}}-container/{{kebabCase name}}/{{kebabCase name}}.component.jsx',
       templateFile: '.plop/component.hbs',
     },
       {
@@ -107,7 +107,7 @@ module.exports = function (plop) {
       },
       {
         type: 'add',
-        path: '{{cwd}}//{{kebabCase name}}-container/{{kebabCase name}}.container.ts',
+        path: '{{cwd}}//{{kebabCase name}}-container/{{kebabCase name}}.container.js',
         templateFile: '.plop/container.hbs',
       },
       {
@@ -130,7 +130,7 @@ module.exports = function (plop) {
     }],
     actions: [{
       type: 'add',
-      path: '{{cwd}}/{{kebabCase name}}.action.ts',
+      path: '{{cwd}}/{{kebabCase name}}.action.js',
       templateFile: '.plop/action.hbs',
     },
       {
@@ -153,7 +153,7 @@ module.exports = function (plop) {
     }],
     actions: [{
       type: 'add',
-      path: '{{cwd}}/{{kebabCase name}}.action.ts',
+      path: '{{cwd}}/{{kebabCase name}}.action.js',
       templateFile: '.plop/action-network.hbs',
     }, {
       type: 'add',
@@ -175,7 +175,7 @@ module.exports = function (plop) {
     }],
     actions: [{
       type: 'add',
-      path: '{{cwd}}/{{kebabCase name}}.selectors.ts',
+      path: '{{cwd}}/{{kebabCase name}}.selectors.js',
       templateFile: '.plop/selectors.hbs',
     },
       {

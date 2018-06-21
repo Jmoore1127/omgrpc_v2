@@ -1,0 +1,21 @@
+import { {{camelCase name}}, reducer, handle{{pascalCase name}} } from './{{kebabCase name}}.action';
+
+describe('{{camelCase name}} Action', () => {
+  it('creates actions with a payload', () => {
+    const expected = { abc: 123 };
+    const actual = {{camelCase name}}(expected);
+    expect(actual.payload).to.deep.equal(expected);
+    expect(actual.type).to.be.equal('{{constantCase name}}');
+  });
+
+  it('reduces the state change', () => {
+    const newState = reducer({}, {{camelCase name}}('test'));
+    expect(newState).to.deep.equal({ data: 'test' });
+  });
+
+  it('completes the saga', () => {
+    const generator = handle{{pascalCase name}}({ payload: 'test' });
+    generator.next();
+    expect(generator.next()).to.have.property("done", true);
+  });
+});

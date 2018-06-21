@@ -1,0 +1,9 @@
+import { createSelector } from 'reselect';
+
+const selectState = state => state['{{camelCase name}}'];
+export const select{{pascalCase name}} = createSelector(
+    selectState,
+    (state) => {
+      return state.data;
+    }
+);

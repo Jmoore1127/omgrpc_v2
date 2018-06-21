@@ -1,0 +1,74 @@
+import { call, put } from 'redux-saga/effects';
+import { spy } from 'sinon';
+
+import {
+  {{camelCase name}},
+  {{camelCase name}}Success,
+  {{camelCase name}}Failure,
+  handle{{pascalCase name}},
+  reducer
+} from './{{kebabCase name}}.action';
+
+describe('{{pascalCase name}} Action', () => {
+    it('creates actions with a payload', () => {
+        const expected = {abc:123};
+        const actual = {{camelCase name}}(expected);
+        expect(actual.payload).to.deep.equal(expected);
+        expect(actual.type).to.be.equal('{{constantCase name}}')
+    });
+
+    it('calls endpoint', () => {
+      const generator = handle{{pascalCase name}}();
+      expect(generator.next().value).to.deep.equal(call(fetch, 'someUrl'));
+    });
+
+    it('dispatches success action on completion', () => {
+      const generator =  handle{{pascalCase name}}();
+      generator.next();
+      expect(generator.next({data: 'test'}).value).to.deep.equal(put({{camelCase name}}Success('test')));
+    });
+
+    it('dispatches an error on failure', () => {
+      const generator = handle{{pascalCase name}}();
+      generator.next();
+
+      expect(generator.throw('test').value).to.deep.equal(put({{camelCase name}}Failure('test')));
+    });
+
+    it('reduces initial action to set loading true', ()=> {
+      const currentState = {};
+      const result = reducer(currentState, {{camelCase name}}());
+
+      expect(result).to.have.property('loading', true);
+    });
+
+
+    it('reduces success action to set loading false', ()=> {
+      const currentState = {};
+      const result = reducer(currentState, {{camelCase name}}Success());
+
+      expect(result).to.have.property('loading', false);
+    });
+
+    it('reduces success action to set data', ()=> {
+      const currentState = {};
+      const result = reducer(currentState, {{camelCase name}}Success('test'));
+
+      expect(result).to.have.property('data', 'test');
+    });
+
+
+    it('reduces failure action to set loading false', ()=> {
+      const currentState = {};
+      const result = reducer(currentState, {{camelCase name}}Failure());
+
+      expect(result).to.have.property('loading', false);
+    });
+
+    it('reduces failure action to set error', ()=> {
+      const currentState = {};
+      const result = reducer(currentState, {{camelCase name}}Failure('test'));
+
+      expect(result).to.have.property('error', 'test');
+    });
+});

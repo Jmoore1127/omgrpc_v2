@@ -1,0 +1,9 @@
+import { {{pascalCase name}}Container } from './{{kebabCase name}}.container';
+
+describe('{{pascalCase name}}Container', () => {
+  it('returns a function', () => {
+    const actual = typeof {{pascalCase name}}Container;
+    const expected = 'function';
+    expect(actual).to.be.equal(expected);
+  });
+});

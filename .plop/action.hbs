@@ -1,0 +1,22 @@
+import { Action, createAction, handleAction } from 'redux-actions';
+import { call, put, takeEvery } from 'redux-saga/effects';
+
+export type {{pascalCase name}}Payload = {
+
+};
+
+export const {{camelCase name}} = createAction<{{pascalCase name}}Payload>('{{constantCase name}}');
+
+const defaultState = {};
+
+export const reducer = handleAction({{camelCase name}},
+  (state: {}, action: Action<{{pascalCase name}}Payload>) => Object.assign({}, state, { data: action.payload }),
+  defaultState);
+
+export const handle{{pascalCase name}} = function* (action) {
+    yield call(console.log, action.payload);
+};
+
+export const saga = function* () {
+    yield takeEvery({{camelCase name}}.toString(), handle{{pascalCase name}});
+};

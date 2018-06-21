@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { css, cx } from 'emotion';
+import { styledSvg, SvgProps } from '../styled-svg.hoc';
+
+export const Raw{{pascalCase name}} = (props: SvgProps) => {
+  const {width = 25, height = 25, className, ...others} = props;
+  return (
+    <svg className={cx(className, css`width: ${width}px; height: ${height}px;`)} {...others} viewBox="0 0 100 100">
+      <rect x={5} y={5} width={90} height={90} stroke-width="2px" stroke="black">Replace Me!</rect>
+    </svg>
+  );
+};
+
+export const {{pascalCase name}} = styledSvg()(Raw{{pascalCase name}});

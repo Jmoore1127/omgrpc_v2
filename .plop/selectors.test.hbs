@@ -1,0 +1,9 @@
+import { select{{pascalCase name}} } from './{{kebabCase name}}.selectors';
+
+describe('{{pascalCase name}} Selectors', () => {
+  it('should select data from the store', () => {
+    const store = { {{camelCase name}}: { data: 'test' }};
+    const expected = 'test';
+    expect(select{{pascalCase name}}(store)).to.equal(expected);
+  });
+});

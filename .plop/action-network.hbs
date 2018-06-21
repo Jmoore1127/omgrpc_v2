@@ -1,0 +1,34 @@
+import { createAction, handleActions } from 'redux-actions';
+import { all, call, put, takeEvery } from 'redux-saga/effects';
+
+export type {{pascalCase name}}Payload = {
+
+};
+
+export type {{pascalCase name}}ResultPayload = any;
+
+export const {{camelCase name}} = createAction<{{pascalCase name}}Payload>('{{constantCase name}}');
+export const {{camelCase name}}Success = createAction<{{pascalCase name}}ResultPayload>('{{constantCase name}}_SUCCESS');
+export const {{camelCase name}}Failure = createAction<Error>('{{constantCase name}}_FAILURE');
+
+export const handle{{pascalCase name}} = function* (action) {
+      try {
+      const response = yield call(fetch, 'someUrl');
+      yield put({{camelCase name}}Success(response.data));
+    } catch (error) {
+      yield put({{camelCase name}}Failure(error));
+    }
+};
+
+export const saga = function* () {
+  yield all([
+    takeEvery({{camelCase name}}.toString(), handle{{pascalCase name}})
+  ]);
+};
+
+const defaultState = {};
+export const reducer = handleActions({
+  [{{camelCase name}}.toString()]: (state, action) => Object.assign({}, state, { loading: true}),
+  [{{camelCase name}}Success.toString()]: (state, action) => Object.assign({}, state, { data: action.payload, loading: false}),
+  [{{camelCase name}}Failure.toString()]: (state, action) => Object.assign({}, state, { error: action.payload, loading: false}),
+}, {});

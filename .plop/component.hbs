@@ -1,0 +1,11 @@
+import * as React from 'react';
+
+export type {{pascalCase name}}Props = {
+  name: string;
+};
+
+export const {{pascalCase name}} = ({ name = '{{pascalCase name}}' }: {{pascalCase name}}Props) => {
+  return (
+    <div>{name}</div>
+  );
+};

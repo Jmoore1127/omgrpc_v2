@@ -1,0 +1,18 @@
+import * as React from 'react';
+import { Component } from 'react';
+
+export type {{pascalCase name}}Props = {
+  name: string;
+};
+
+export class {{pascalCase name}} extends Component<{{pascalCase name}}Props, {}> {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>{this.props.name}</div>
+    );
+  }
+}
